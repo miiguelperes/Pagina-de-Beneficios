@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+body {
+    background-color: #000000 !important;
+    font-family: "Lato", sans-serif !important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.MuiTypography-body1, h3, h1,span,div {
+    font-family: "Lato", sans-serif !important;
+    background: transparent;
+}
+.MuiBox-root, .makeStyles-root-5 , .MuiBox-root-19, .makeStyles-root-1{
+    background-color: transparent!important;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap');
+
+.header2 {display:flex;
+    flex-direction: column;
+    justify-content: center;    align-items: center;
+     background: url('./assets/top-header.jpg') no-repeat top center; min-height: 410px; }
+.header2 .beneficios-pra-vc { font-family: 'Rubik', sans-serif; font-size: 1.3em; position: relative; top: 30px; color: #fff; }
+.header2 p {     font-family: 'Rubik', sans-serif;
+    font-size: 1.3em;
+    position: relative;
+    top: 30px;
+    color: #fff; }
+.header2 p span { font-weight: 500; }
+.header2 .seta-aqui { position: relative; top: 15px; left: -15px; }
+
+.iconButton{
+    padding: 10;
+}
+
+.divider {
+    height: 28;
+    margin: 4;
+  }
+
+  .input {
+    margin-left: 10;
+    width: 100%;
+    flex: 1;
+  }
+  .boxSearch{
+      display: flex;
+      flex-direction: row;
+      margin-bottom: 20px;
+  }
+
+  .MuiBox-root-15 {
+      padding: 0!important;
+  }
+
+  .MuiAppBar-colorPrimary{
+      background-color: transparent!important;
+  }
+
+  .MuiTabs-flexContainer {
+    justify-content: space-between!important;
+    display: flex;
+}
+
+
+.beneficios-pra-vc{font-family: 'Rubik', sans-serif;
+font-size: 1.3em;
+position: relative;
+top: 160px;
+color: #fff;}
+
+ .alert-link {
+    color: #533f03!important;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #003b4d; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #00070f; 
+  }
+
+  .garanta-brindes[data-v-fae5bece] {
+    font-family: "Rubik", sans-serif;
+    font-size: 1.3em;
+    color: #fff;
+    margin-top: 10px;
+    border-bottom: 1px solid #7cb545;
+}

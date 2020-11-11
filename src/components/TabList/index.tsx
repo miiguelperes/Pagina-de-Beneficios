@@ -155,7 +155,7 @@ export default function SimpleTabs(props: any) {
       <Divider className={"divider"} orientation="vertical" />
     </Paper>
       {value != 4 &&
-        <Alert severity="warning" style={{ marginBottom: 20 }}>Exibindo apenas benefícios por tipo "{title}". <a data-v-fae5bece="" onClick={() => { setValue(4) }} className="alert-link" target="_top" >Clique aqui</a> para exibir todos os benefícios.</Alert>}</div>)
+        <Alert severity="warning" style={{ marginBottom: 20 , display:'flex', justifyContent: 'center', alignItems: 'center'}}>Exibindo apenas benefícios por tipo "{title}". <a data-v-fae5bece="" onClick={() => { setValue(4) }} className="alert-link" target="_top" >Clique aqui</a> para exibir todos os benefícios.</Alert>}</div>)
   }
   return (
     <div className={classes.root}>
@@ -204,7 +204,7 @@ export default function SimpleTabs(props: any) {
         <div style={{ height: 800 }}>
           {searchComponent("Cupons de Desconto")}
 
-          {(props.props.type01.length == 0) && <Alert severity="error">Nenhum benefício  encontrado</Alert>}
+          {(props.props.type01.length == 0) && <Alert style={{height: 100, display:'flex', justifyContent: 'center', alignItems: 'center'}} severity="error">Nenhum benefício  encontrado</Alert>}
           {props.props.type01.map((item: any) => {
             return <Grow
               in={checked}
@@ -219,7 +219,7 @@ export default function SimpleTabs(props: any) {
       <TabPanel value={value} index={1}>
         <div style={{ height: 800 }}>
           {searchComponent("Promoções Exclusivas")}
-          {(props.props.type02.length == 0) && <Alert severity="error">Nenhum benefício encontrado</Alert>}
+          {(props.props.type02.length == 0) && <Alert style={{height: 100, display:'flex', justifyContent: 'center', alignItems: 'center'}} severity="error">Nenhum benefício encontrado</Alert>}
           {props.props.type02.map((item: any) => {
             return <Grow
               in={checked}
@@ -234,7 +234,7 @@ export default function SimpleTabs(props: any) {
       <TabPanel value={value} index={2}>
         <div style={{ height: 800 }}>
           {searchComponent("Queda de Preço")}
-          {props.props.type03.length == 0 && <Alert severity="error">Nenhum benefício encontrado</Alert>}
+          {props.props.type03.length == 0 && <Alert style={{height: 100, display:'flex', justifyContent: 'center', alignItems: 'center'}} severity="error">Nenhum benefício encontrado</Alert>}
           {props.props.type03.map((item: any) => {
             return <Grow
               in={checked}
@@ -272,7 +272,7 @@ export default function SimpleTabs(props: any) {
                 <option style={{  backgroundColor: '#252525', color: '#fff'}} value={4}>acima de 50% OFF</option>
               </NativeSelect>
             </div>
-            { props.props.type04.length == 0 && <Alert severity="error">Nenhum benefício encontrado</Alert>}
+            { props.props.type04.length == 0 && <Alert style={{height: 100, display:'flex', justifyContent: 'center', alignItems: 'center'}} severity="error">Nenhum benefício encontrado</Alert>}
           </div>
           {props.props.type04.map((item: any) => {
             return <Grow
@@ -288,7 +288,7 @@ export default function SimpleTabs(props: any) {
       <TabPanel value={value} index={4}>
         <div style={{ height: 800 }}>
           {searchComponent("Cashbacks BEM")}
-          {props.props.type00.length == 0 && <Alert severity="error">Nenhum benefício encontrado</Alert>}
+          {props.props.type00.length == 0 && <Alert style={{height: 100}} severity="error">Nenhum benefício encontrado</Alert>}
           {props.props.type00.map((item: any) => {
             return <Grow
               in={checked}

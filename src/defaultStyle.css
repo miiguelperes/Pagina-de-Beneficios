@@ -139,9 +139,14 @@ hr {
   font-size: 32px;
   color: "#63666C";
 }
-@media only screen and (min-width : 2000px) {
+
+@media screen and (min-width: 0px) and (max-width: 400px) {
+  .hide-mobile { display: none; }  /* show it on small screens */
 }
 
+@media screen and (min-width: 401px) and (max-width: 1024px) {
+  .hide-mobile{ display: block; }   /* hide it elsewhere */
+}
 @media only screen and (min-width : 320px) {
   .MuiTabs-flexContainer {
     display: flex;

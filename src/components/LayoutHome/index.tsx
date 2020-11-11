@@ -43,7 +43,7 @@ class LayoutHome extends Component<Props> {
     const { loadRequest, loadLogin } = this.props;
     loadLogin();
     setTimeout(() => {
-      loadRequest({ filter01: { cashback: 0 } });
+      loadRequest({ filter01: { cashback: 99 } });
     }, 500);
   }
 

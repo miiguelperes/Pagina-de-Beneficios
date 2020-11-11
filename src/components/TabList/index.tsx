@@ -117,7 +117,7 @@ export default function SimpleTabs(props: any) {
   useEffect(() => {
 
     setTimeout(() => {
-      props.props.loadRequest({ filter01: { cashback: 0 } })
+      props.props.loadRequest({ filter01: { cashback: 99 } })
     }, 500);
 
     var addressPage = window.location.href;

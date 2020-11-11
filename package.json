@@ -1,6 +1,7 @@
 {
   "name": "tsreact",
   "version": "0.1.0",
+  "homepage": "./",
   "private": true,
   "dependencies": {
     "@lxsmnsyc/react-image": "^0.5.9",

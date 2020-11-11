@@ -42,7 +42,9 @@ class LayoutHome extends Component<Props> {
   componentDidMount() {
     const { loadRequest, loadLogin } = this.props;
     loadLogin();
-    loadRequest({ filter01: { cashback: 0 } });
+    setTimeout(() => {
+      loadRequest({ filter01: { cashback: 0 } });
+    }, 500);
   }
 
   handleChange = (event: any) => {

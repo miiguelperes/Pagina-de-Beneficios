@@ -14,7 +14,10 @@
   }
 }
 
-
+.jss5 {
+  flex-grow: 1;
+  background-color: #fff!important; 
+}
 body {
     background-color: #000000 !important;
     font-family: "Lato", sans-serif !important;

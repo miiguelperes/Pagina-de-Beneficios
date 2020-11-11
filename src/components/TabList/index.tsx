@@ -30,7 +30,7 @@ import DirectionsIcon from '@material-ui/icons/Directions';
 import MenuItem from '@material-ui/core/MenuItem';
 import Select from '@material-ui/core/Select';
 import Alert from '@material-ui/lab/Alert';
-import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
+import NativeSelect from '@material-ui/core/NativeSelect';
 
 function TabPanel(props: any) {
 
@@ -274,27 +274,30 @@ export default function SimpleTabs(props: any) {
       <TabPanel value={value} index={3}>
         <div style={{ height: 800 }}>
           {searchComponent("Cashbacks BEM")}
-          {props.props.type04.length == 0 && <Alert severity="error">Nenhum benefício encontrado</Alert>}
+       
           <div style={{ height: 100 }}>
             <div style={{ color: '#ffffff' }}>Filtrar por <span style={{ fontWeight: 'bolder' }}>Desconto</span></div>
             <div style={{ backgroundColor: '#ffffff', width: 250, borderRadius: 7 }}>
             
-              <Select
+              
+              <NativeSelect
+              style={{width: '100%'}}
                 value={props.props.selected}
-                onChange={(e:any, a:any) => props.props.handleChange(e, a)}
-                className={classes.selectEmpty}
-                renderValue={()=>renderValue(props.props.selected)}
-                
+                onChange={props.props.handleChange}
+                inputProps={{
+                  name: 'age',
+                  id: 'age-native-label-placeholder',
+                }}
               >
-                <MenuItem value={99}>Todos as faixas</MenuItem>
-                <MenuItem value={0}>de 1% a 10% OFF</MenuItem>
-                <MenuItem value={1}>de 11% a 20% OFF</MenuItem>
-                <MenuItem value={2}>de 21% a 30% OFF</MenuItem>
-                <MenuItem value={3}>de 31% a 50% OFF</MenuItem>
-                <MenuItem value={4}>acima de 50% OFF</MenuItem>
-              </Select>
-
+                <option value={99}>Todos as faixas</option>
+                <option value={0}>de 1% a 10% OFF</option>
+                <option value={1}>de 11% a 20% OFF</option>
+                <option value={2}>de 21% a 30% OFF</option>
+                <option value={3}>de 31% a 50% OFF</option>
+                <option value={4}>acima de 50% OFF</option>
+              </NativeSelect>
             </div>
+            { props.props.type04.length == 0 && <Alert severity="error">Nenhum benefício encontrado</Alert>}
           </div>
           {props.props.type04.map((item: any) => {
             return <Grow

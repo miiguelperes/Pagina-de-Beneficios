@@ -11,11 +11,11 @@ const theme = createMuiTheme({
       }
     }
   });
-const App = () => <Provider store={store}>
-    
+const App = () => <div className="website-wrapper">
+    <Provider store={store}>
     <MuiThemeProvider theme={theme}>
     <LayoutHome />
     </MuiThemeProvider>
     </Provider>;
-
+    </div>
 export default App;

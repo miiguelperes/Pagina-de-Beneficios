@@ -30,5 +30,6 @@ setInterval(function() {
   };
 
   window.parent.postMessage(data, "*");
-}, 500);
+}, 1000);
+
 ReactDOM.render(<App />, document.getElementById("root"));

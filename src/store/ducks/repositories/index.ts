@@ -101,11 +101,23 @@ const reducer: Reducer<RepositoriesState> = (state = INITIAL_STATE, action: any)
               return el;
             }
           })
+          type03 = type03.filter((el: any) => {
+            let discount = Number(el.discount.replace(/\D/g, "").replace(',', '.'))
+            if (discount > 1 && discount < 10) {
+              return el;
+            }
+          })
           break;
         case 1:
           type04 = type04.filter((el: any) => {
             let cashback = Number(el.cashback.replace(',', '.'))
             if (cashback > 11 && cashback < 20) {
+              return el;
+            }
+          })
+          type03 = type03.filter((el: any) => {
+            let discount = Number(el.discount.replace(/\D/g, "").replace(',', '.'))
+            if (discount > 11 && discount < 20) {
               return el;
             }
           })
@@ -117,11 +129,23 @@ const reducer: Reducer<RepositoriesState> = (state = INITIAL_STATE, action: any)
               return el;
             }
           })
+          type03 = type03.filter((el: any) => {
+            let discount = Number(el.discount.replace(/\D/g, "").replace(',', '.'))
+            if (discount > 21 && discount < 30) {
+              return el;
+            }
+          })
           break;
         case 3:
           type04 = type04.filter((el: any) => {
             let cashback = Number(el.cashback.replace(',', '.'))
             if (cashback > 31 && cashback < 50) {
+              return el;
+            }
+          })
+          type03 = type03.filter((el: any) => {
+            let discount = Number(el.discount.replace(/\D/g, "").replace(',', '.'))
+            if (discount > 31 && discount < 50) {
               return el;
             }
           })
@@ -133,10 +157,30 @@ const reducer: Reducer<RepositoriesState> = (state = INITIAL_STATE, action: any)
               return el;
             }
           })
+          type03 = type03.filter((el: any) => {
+            let discount = Number(el.discount.replace(/\D/g, "").replace(',', '.'))
+            if (discount > 50) {
+              return el;
+            }
+          })
           break;
         default:
           break;
       }
+
+
+      type04 = type04.sort((a: any, b:any) => {
+        let ca = Number(a.cashback.replace(',', '.'))
+        let cb = Number(b.cashback.replace(',', '.'))
+        return ca - cb
+      }).reverse()
+
+      type03 = type03.sort((a: any, b:any) => {
+        let da = Number(a.discount.replace(/\D/g, "").replace(',', '.'))
+        let db = Number(b.discount.replace(/\D/g, "").replace(',', '.'))
+        return da - db
+      }).reverse()
+
       return {
         ...state, loading: false, error: false, type00, type01, type02, type03, type04, oldtype04: type04, oldtype03: type03, oldtype02: type02, oldtype01: type01, oldtype00: type00
       };

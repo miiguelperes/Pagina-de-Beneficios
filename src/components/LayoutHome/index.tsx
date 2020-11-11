@@ -12,10 +12,12 @@ import Backdrop from '../Backdrop';
 import Header from "../Header"
 
 interface StateProps {
+  type00: any[],
   type01: any[],
   type02: any[],
   type03: any[],
   type04: any[],
+  oldtype00: any[],
   oldtype01: any[],
   oldtype02: any[],
   oldtype03: any[],
@@ -50,7 +52,7 @@ class LayoutHome extends Component<Props> {
   }
 
   render() {
-    const { type01, type02, type03, type04, selectValue, search, searchData, loading, selected } = this.props;
+    const { type01, type02, type03, type04, selectValue, search, searchData, loading, selected, loadRequest } = this.props;
 
     return (
       <div>
@@ -60,7 +62,7 @@ class LayoutHome extends Component<Props> {
         
         <div style={{ fontFamily: "Lato", marginBottom: 150, paddingBottom: 200 }} >
           
-          <TabList props={{...this.props, handleChange: this.handleChange}} />
+          <TabList props={{...this.props, handleChange: this.handleChange, loadRequest}} />
         </div>
       </Container>
       <Backdrop show={loading}/>
@@ -70,10 +72,12 @@ class LayoutHome extends Component<Props> {
 }
 
 const mapStateToProps = (state: ApplicationState) => ({
+  type00: state.repositories.type00,
   type01: state.repositories.type01,
   type02: state.repositories.type02,
   type03: state.repositories.type03,
   type04: state.repositories.type04,
+  oldtype00: state.repositories.oldtype00,
   oldtype01: state.repositories.oldtype01,
   oldtype02: state.repositories.oldtype02,
   oldtype03: state.repositories.oldtype03,

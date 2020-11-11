@@ -28,7 +28,7 @@ export default function SimpleCard(props: any) {
   return (
       <div className="header2">
             <img src={beneficios} alt="Benefícios pra você" title="Benefícios pra você" className="img-fluid beneficios-pra-vc"/>
-            <p>O Martins.com.br reuniu todas as vantagens em um só lugar. <span>Aqui!</span> <img src={setaAqui} alt="Aqui" title="Aqui" className="img-fluid seta-aqui"/> </p>
+            <p style={{textAlign: 'center'}}>O Martins.com.br reuniu todas as vantagens em um só lugar. <span>Aqui!</span> <img src={setaAqui} alt="Aqui" title="Aqui" className="img-fluid seta-aqui"/> </p>
       </div>
   );
 }

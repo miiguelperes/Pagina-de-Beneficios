@@ -7,7 +7,8 @@ export enum RepositoriesTypes {
   LOAD_FAILURE = '@repositories/LOAD_FAILURE',
   LOGIN = '@repositories/LOGIN',
   SAVE_SELECTED = '@repositories/SAVE_SELECTED',
-  SEARCH_DATA = '@repositories/SEARCH_DATA'
+  SEARCH_DATA = '@repositories/SEARCH_DATA',
+  LOAD_FINISH = '@repositories/LOAD_FINISH'
 }
 
 /**
@@ -23,10 +24,12 @@ export interface Repository {
  */
 export interface RepositoriesState {
   readonly selectValue: any
+  readonly  type00: any []
   readonly  type01: any []
   readonly type02:  any []
   readonly type03:  any []
   readonly type04:  any []
+  readonly oldtype00: any[]
   readonly oldtype01: any[]
   readonly oldtype02: any[]
   readonly oldtype03: any[]

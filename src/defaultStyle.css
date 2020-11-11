@@ -1,4 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+@mixin for-size($size) {
+  @if $size == phone-only {
+    @media (max-width: 599px) { @content; }
+  } @else if $size == tablet-portrait-up {
+    @media (min-width: 600px) { @content; }
+  } @else if $size == tablet-landscape-up {
+    @media (min-width: 900px) { @content; }
+  } @else if $size == desktop-up {
+    @media (min-width: 1200px) { @content; }
+  } @else if $size == big-desktop-up {
+    @media (min-width: 1800px) { @content; }
+  }
+}
+
+
 body {
     background-color: #000000 !important;
     font-family: "Lato", sans-serif !important;
@@ -71,6 +87,7 @@ color: #fff;}
 
  .alert-link {
     color: #533f03!important;
+    cursor: pointer;
 }
 
 /* width */
@@ -99,4 +116,58 @@ color: #fff;}
     color: #fff;
     margin-top: 10px;
     border-bottom: 1px solid #7cb545;
+}
+
+.MuiButtonBase-root .MuiAccordionSummary-root{
+  display: none!important;
+}
+.regras:hover{
+  text-decoration: underline;
+}
+
+hr {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+.caixa-off{
+  display: "flex";
+  align-items: center;
+  font-weight: "bold";
+  height: 100%!important;
+  font-size: 32px;
+  color: "#63666C";
+}
+@media only screen and (min-width : 320px) {
+  .hide-mobile{display: none;}
+  .MuiTabs-flexContainer {
+    display: flex;
+    flex-wrap: wrap!important;
+    justify-content: center!important;
+  }
+  .header2{
+    margin-bottom: -50px;
+  }
+  .btn_full{
+    width: 100%!important;
+    height: 70px!important;
+    margin-top: 15px!important;
+  }
+  .MuiContainer-root .MuiContainer-fixed {
+    padding-left: 0px!important;
+     padding-right: 0px!important;
+  }
+  .MuiBox-root{
+    padding-left: 0px!important;
+     padding-right: 0px!important;
+  }
+  .caixa-off{
+    justify-content: center;
+    display: flex;
+    font-weight: "bold";
+    height: 50px;
+    font-size: 32px;
+    color: "#63666C";
+  }
 }

@@ -7,8 +7,9 @@ export function* load(filters: any) {
   try {
 
     let auth: any = localStorage.getItem('access_token');
-
-    const response = yield call(api.get, 'api/marketplace/benefits', {
+    var cnpj = location.search.split('cnpj=')[1]
+    var url = 'api/marketplace/benefits' + (cnpj ? ('?cnpj='+cnpj) : ' ')
+    const response = yield call(api.get,url , {
       headers: { 
         "Content-Type": "application/json", 
         "Authorization": "Bearer "+auth }

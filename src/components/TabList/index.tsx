@@ -113,39 +113,12 @@ export default function SimpleTabs(props: any) {
   const handleChange = (event: any, newValue: any) => {
     setValue(newValue);
   };
-  const renderValue = (value: any) => {
-    let myv = value || value[0]
-    let rest =  ''
-    switch (myv) {
-      case 99:
-        rest =  'Todos as faixas'
-        break;
-      case 0:
-        rest =  'de 1% a 10% OFF'
-        break;
-      case 1:
-        rest =  'de 11% a 20% OFF'
-        break;
-      case 2:
-        rest =  'de 21% a 30% OFF'
-        break;
-      case 3:
-        rest =  'de 31% a 50% OFF'
-        break;
-      case 4:
-        rest =  'acima de 50% OFF'
-        break;
 
-    }
-    /*var div:any = document.getElementsByClassName('MuiInput-input');
-    if(div[0])
-     div[0].innerHTML = (<div style={{padding: 5, zIndex:199,background: 'red'}}>{rest}</div>);*/
-    return (<div >{rest}</div>);
-  }
   useEffect(() => {
+
     setTimeout(() => {
       props.props.loadRequest({ filter01: { cashback: 0 } })
-    }, 200);
+    }, 500);
 
     var addressPage = window.location.href;
     var paramPage = addressPage.split("?");
@@ -193,14 +166,15 @@ export default function SimpleTabs(props: any) {
             display: 'none'
           }
         }} disableRipple indicatorColor="secondary" classes={{ root: classes.tab }} value={value} onChange={handleChange} >
-          <Tab disableRipple component={() => (
-            <Button style={{ minWidth: 180, maxWidth: '100%' }} onClick={() => setValue(0)}>
-              {value == 0 ?
-                <img style={{ objectFit: "cover", height: 120 }} src={Desconto_filter_hover} alt={'Desconto_filter_hover'} /> :
-                <img style={{ objectFit: "cover", height: 120 }} src={Desconto_filter} alt={'Desconto_filter'} />}
-
+          
+          <Tab component={() => (
+            <Button style={{ minWidth: 180, maxWidth: '100%' }} onClick={() => setValue(3)}>
+              {value == 3 ?
+                <img style={{ objectFit: "cover", height: 120 }} src={Cashback_filter_hover} alt={'Cashback_filter_hover'} /> :
+                <img style={{ objectFit: "cover", height: 120 }} src={Cashback_filter} alt={'Cashback_filter'} />}
             </Button>
-          )} label="Item One" {...a11yProps(0)} />
+          )} label="Item quer" {...a11yProps(3)} />
+          
           <Tab component={() => (
             <Button style={{ minWidth: 180, maxWidth: '100%' }} onClick={() => setValue(1)}>
               {value == 1 ?
@@ -215,13 +189,14 @@ export default function SimpleTabs(props: any) {
                 <img style={{ objectFit: "cover", height: 120 }} src={Preco_filter} alt={'Preco_filter'} />}
             </Button>
           )} label="Item Three" {...a11yProps(2)} />
-          <Tab component={() => (
-            <Button style={{ minWidth: 180, maxWidth: '100%' }} onClick={() => setValue(3)}>
-              {value == 3 ?
-                <img style={{ objectFit: "cover", height: 120 }} src={Cashback_filter_hover} alt={'Cashback_filter_hover'} /> :
-                <img style={{ objectFit: "cover", height: 120 }} src={Cashback_filter} alt={'Cashback_filter'} />}
+          <Tab disableRipple component={() => (
+            <Button style={{ minWidth: 180, maxWidth: '100%' }} onClick={() => setValue(0)}>
+              {value == 0 ?
+                <img style={{ objectFit: "cover", height: 120 }} src={Desconto_filter_hover} alt={'Desconto_filter_hover'} /> :
+                <img style={{ objectFit: "cover", height: 120 }} src={Desconto_filter} alt={'Desconto_filter'} />}
+
             </Button>
-          )} label="Item quer" {...a11yProps(3)} />
+          )} label="Item One" {...a11yProps(0)} />
         </Tabs>
       </AppBar>
       <div data-v-fae5bece="" align-v="center" className="text-center mb-3 garanta-brindes col"><p data-v-fae5bece="">Veja abaixo as promoções vigentes em nosso site e garanta brindes ou vantagens exclusivos!</p></div>

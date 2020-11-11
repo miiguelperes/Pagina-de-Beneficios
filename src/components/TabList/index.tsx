@@ -256,7 +256,7 @@ export default function SimpleTabs(props: any) {
             
               
               <NativeSelect
-              style={{width: '100%'}}
+              style={{width: '100%', background: '#252525', color: '#fff', borderRadius: 4, borderColor:'#03AEFC', textIndent: '0.01px'}}
                 value={props.props.selected}
                 onChange={props.props.handleChange}
                 inputProps={{
@@ -264,12 +264,12 @@ export default function SimpleTabs(props: any) {
                   id: 'age-native-label-placeholder',
                 }}
               >
-                <option value={99}>Todos as faixas</option>
-                <option value={0}>de 1% a 10% OFF</option>
-                <option value={1}>de 11% a 20% OFF</option>
-                <option value={2}>de 21% a 30% OFF</option>
-                <option value={3}>de 31% a 50% OFF</option>
-                <option value={4}>acima de 50% OFF</option>
+                <option style={{  backgroundColor: '#252525', color: '#fff'}} value={99}>Todos as faixas</option>
+                <option style={{  backgroundColor: '#252525', color: '#fff'}} value={0}>de 1% a 10% OFF</option>
+                <option style={{  backgroundColor: '#252525', color: '#fff'}} value={1}>de 11% a 20% OFF</option>
+                <option style={{  backgroundColor: '#252525', color: '#fff'}} value={2}>de 21% a 30% OFF</option>
+                <option style={{  backgroundColor: '#252525', color: '#fff'}} value={3}>de 31% a 50% OFF</option>
+                <option style={{  backgroundColor: '#252525', color: '#fff'}} value={4}>acima de 50% OFF</option>
               </NativeSelect>
             </div>
             { props.props.type04.length == 0 && <Alert severity="error">Nenhum benefício encontrado</Alert>}

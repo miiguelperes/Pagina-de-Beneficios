@@ -14,10 +14,7 @@
   }
 }
 
-.jss5 {
-  flex-grow: 1;
-  background-color: #fff!important; 
-}
+
 body {
     background-color: #000000 !important;
     font-family: "Lato", sans-serif !important;
@@ -47,6 +44,8 @@ body {
     color: #fff; }
 .header2 p span { font-weight: 500; }
 .header2 .seta-aqui { position: relative; top: 15px; left: -15px; }
+
+.MuiNativeSelect-select.MuiNativeSelect-select { padding: 0.5em 1.5em 0.5em 0.5em !important; }
 
 .iconButton{
     padding: 10;
@@ -143,13 +142,14 @@ hr {
   color: "#63666C";
 }
 
-@media screen and (min-width: 0px) and (max-width: 400px) {
+@media screen and (min-width: 0px) and (max-width: 420px) {
   .hide-mobile { display: none; }  /* show it on small screens */
 }
 
-@media screen and (min-width: 401px) and (max-width: 1024px) {
+@media screen and (min-width: 421px) and (max-width: 1024px) {
   .hide-mobile{ display: block; }   /* hide it elsewhere */
 }
+
 @media only screen and (min-width : 320px) {
   .MuiTabs-flexContainer {
     display: flex;

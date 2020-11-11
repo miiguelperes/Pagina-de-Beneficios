@@ -14,6 +14,10 @@
   }
 }
 
+.jss5 {
+  flex-grow: 1;
+  background-color: transparent!important; 
+}
 
 body {
     background-color: #000000 !important;

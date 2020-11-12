@@ -204,10 +204,10 @@ export default function SimpleTabs(props: any) {
       </AppBar>
       <div data-v-fae5bece="" align-v="center" className="text-center mb-3 garanta-brindes col"><p data-v-fae5bece="">Veja abaixo as promoções vigentes em nosso site e garanta brindes ou vantagens exclusivos!</p></div>
       <TabPanel value={value} index={0}>
-        <div style={{ height: 800 }}>
+        <div style={{ }}>
           {searchComponent("Cupons de Desconto")}
 
-          {(props.props.type01.length == 0) && <Alert style={{height: 100, display:'flex', fontSize: '1.1em', justifyContent: 'center', alignItems: 'center'}} severity="error">Nenhum benefício  encontrado</Alert>}
+          {(props.props.type01.length == 0) && <Alert style={{height: 100, display:'flex', fontSize: '1.1em', justifyContent: 'center', alignItems: 'center'}} severity="error">Nenhum benefício encontrado</Alert>}
           {props.props.type01.map((item: any) => {
             return <Grow
               in={checked}
@@ -220,7 +220,7 @@ export default function SimpleTabs(props: any) {
         </div>
       </TabPanel>
       <TabPanel value={value} index={1}>
-        <div style={{ height: 800 }}>
+        <div style={{ }}>
           {searchComponent("Promoções Exclusivas")}
           {(props.props.type02.length == 0) && <Alert style={{height: 100, display:'flex', fontSize: '1.1em', justifyContent: 'center', alignItems: 'center'}} severity="error">Nenhum benefício encontrado</Alert>}
           {props.props.type02.map((item: any) => {
@@ -235,7 +235,7 @@ export default function SimpleTabs(props: any) {
         </div>
       </TabPanel>
       <TabPanel value={value} index={2}>
-        <div style={{ height: 800 }}>
+        <div style={{ }}>
           {searchComponent("Queda de Preço")}
           <div style={{ height: 100 }}>
             <div style={{ color: '#ffffff' }}>Filtrar por <span style={{ fontWeight: 'bolder' }}>Desconto</span></div>
@@ -273,7 +273,7 @@ export default function SimpleTabs(props: any) {
         </div>
       </TabPanel>
       <TabPanel value={value} index={3}>
-        <div style={{ height: 800 }}>
+        <div style={{ }}>
           {searchComponent("Cashbacks BEM")}
        
           <div style={{ height: 100 }}>
@@ -312,7 +312,7 @@ export default function SimpleTabs(props: any) {
         </div>
       </TabPanel>
       <TabPanel value={value} index={4}>
-        <div style={{ height: 800 }}>
+        <div style={{ }}>
           {searchComponent("Cashbacks BEM")}
           {props.props.type00.length == 0 && <Alert style={{height: 100, display:'flex', fontSize: '1.1em', justifyContent: 'center', alignItems: 'center'}} severity="error">Nenhum benefício encontrado</Alert>}
           {props.props.type00.map((item: any) => {

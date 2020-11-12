@@ -132,7 +132,8 @@ export default function SimpleTabs(props: any) {
       setValue(2);
     else if (newAddress.indexOf("cashback") > -1)
       setValue(3);
-
+    else
+      setValue(4);
 
   }, []);
 

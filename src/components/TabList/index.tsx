@@ -122,15 +122,16 @@ export default function SimpleTabs(props: any) {
 
     var addressPage = window.location.href;
     var paramPage = addressPage.split("?");
+    //console.log(addressPage)
     var newAddress = paramPage[paramPage.length - 1];
 
-    if (newAddress.indexOf("cupons-desconto") > -1)
+    if (addressPage.indexOf("cupons-desconto") > -1)
       setValue(0);
-    else if (newAddress.indexOf("promocoes-exclusivas") > -1)
+    else if (addressPage.indexOf("promocoes-exclusivas") > -1)
       setValue(1);
-    else if (newAddress.indexOf("queda-preco") > -1)
+    else if (addressPage.indexOf("queda-preco") > -1)
       setValue(2);
-    else if (newAddress.indexOf("cashback") > -1)
+    else if (addressPage.indexOf("cashback") > -1)
       setValue(3);
     else
       setValue(4);

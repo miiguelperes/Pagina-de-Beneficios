@@ -302,7 +302,7 @@ export default function SimpleTabs(props: any) {
         className="text-center mb-3 garanta-brindes col"
       >
         <p data-v-fae5bece="">
-          Veja abaixo{props.props.type00.length} as promoções vigentes em nosso
+          Veja abaixo as promoções vigentes em nosso
           site e garanta brindes ou vantagens exclusivos!
         </p>
       </div>

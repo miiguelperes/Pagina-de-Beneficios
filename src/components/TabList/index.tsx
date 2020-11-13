@@ -110,15 +110,15 @@ export default function SimpleTabs(props: any) {
   const handleChange = (event: any, newValue: any) => {
     setValue(newValue);
   };
-  
+  /*
   useEffect(() => {
     if (props.props.type00.length == 0) {
       props.props.loadRequest({ filter01: { cashback: 99 } });
     }
-  });
+  });*/
 
   useEffect(() => {
-
+    //props.props.loadRequest({ filter01: { cashback: 99 } });
     var addressPage = window.location.href;
     var paramPage = addressPage.split("?");
     var newAddress = paramPage[paramPage.length - 1];

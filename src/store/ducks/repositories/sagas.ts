@@ -8,6 +8,9 @@ export function* load(filters: any) {
 
     let auth: any = localStorage.getItem('access_token');
     var cnpj = location.search.split('cnpj=')[1]
+    
+    cnpj = cnpj.replace(/\D/g, '')
+
     var url = 'api/marketplace/benefits' + (cnpj ? ('?cnpj='+cnpj) : ' ')
     const response = yield call(api.get,url , {
       headers: { 

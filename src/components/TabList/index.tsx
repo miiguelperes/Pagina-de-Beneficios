@@ -307,7 +307,7 @@ export default function SimpleTabs(props: any) {
         </p>
       </div>
       <TabPanel value={value} index={0}>
-        <div style={{ height: 800 }}>
+        <div style={{ }}>
           {searchComponent("Cupons de Desconto")}
 
           {props.props.type01.length == 0 && (
@@ -336,7 +336,7 @@ export default function SimpleTabs(props: any) {
         </div>
       </TabPanel>
       <TabPanel value={value} index={1}>
-        <div style={{ height: 800 }}>
+        <div style={{ }}>
           {searchComponent("Promoções Exclusivas")}
           {props.props.type02.length == 0 && (
             <Alert
@@ -364,7 +364,7 @@ export default function SimpleTabs(props: any) {
         </div>
       </TabPanel>
       <TabPanel value={value} index={2}>
-        <div style={{ height: 800 }}>
+        <div style={{ }}>
           {searchComponent("Queda de Preço")}
           <div style={{ height: 100 }}>
             <div style={{ color: "#ffffff" }}>
@@ -459,7 +459,7 @@ export default function SimpleTabs(props: any) {
         </div>
       </TabPanel>
       <TabPanel value={value} index={3}>
-        <div style={{ height: 800 }}>
+        <div style={{ }}>
           {searchComponent("Cashbacks BEM")}
 
           <div style={{ height: 100 }}>
@@ -554,7 +554,7 @@ export default function SimpleTabs(props: any) {
         </div>
       </TabPanel>
       <TabPanel value={value} index={4}>
-        <div style={{ height: 800 }}>
+        <div style={{ }}>
           {searchComponent("Cashbacks BEM")}
           {props.props.type00.length == 0 && (
             <Alert

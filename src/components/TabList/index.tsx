@@ -189,25 +189,25 @@ export default function SimpleTabs(props: any) {
             </option>
             <option
               style={{ backgroundColor: "#252525", color: "#fff" }}
-              value={3}
+              value={6}
             >
               Beleza
             </option>
             <option
               style={{ backgroundColor: "#252525", color: "#fff" }}
-              value={4}
+              value={5}
             >
               Casa e Construção
             </option>
             <option
               style={{ backgroundColor: "#252525", color: "#fff" }}
-              value={5}
+              value={3}
             >
               Farmácia
             </option>
             <option
               style={{ backgroundColor: "#252525", color: "#fff" }}
-              value={6}
+              value={4}
             >
               Informática e Eletro
             </option>

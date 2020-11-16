@@ -173,7 +173,7 @@ export default function SimpleTabs(props: any) {
               style={{ backgroundColor: "#252525", color: "#fff" }}
               value={99}
             >
-              Todos os seguimentos
+              Todos os segmentos
             </option>
             <option
               style={{ backgroundColor: "#252525", color: "#fff" }}

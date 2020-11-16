@@ -42,16 +42,16 @@ class LayoutHome extends Component<Props> {
   componentDidMount() {
     const { loadRequest, loadLogin } = this.props;
     //loadLogin();
-    loadRequest({ filter01: { cashback: 99 } });
+    loadRequest({ filter01: { cashback: 99, category: 99 } });
     setTimeout(() => {
-      loadRequest({ filter01: { cashback: 99 } });
+      loadRequest({ filter01: { cashback: 99, category: 99 } });
     }, 500);
   }
 
   handleChange = (event: any) => {
     const { loadRequest, saveSelected } = this.props;
     saveSelected(event.target.value)
-    loadRequest({ filter01: { cashback: Number(event.target.value) } });
+    loadRequest({ filter01: { cashback: Number(event.target.value), category: 99 } });
   }
 
   render() {

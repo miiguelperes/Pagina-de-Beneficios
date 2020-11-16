@@ -105,22 +105,42 @@ const reducer: Reducer<RepositoriesState> = (
     case RepositoriesTypes.LOAD_FINISH:
       return { ...state, loading: false };
     case RepositoriesTypes.LOAD_SUCCCES:
-      let type00 = action.payload.data.sort(function(a: any, b: any) {
+
+
+      let fullData = action.payload.data;
+      let atualCategory = action.payload.filters.payload.filter01.category
+
+      if(atualCategory != 99){
+        fullData = fullData.filter((el: any) => {
+          if(el.categoria_id){
+            for (const cat of el.categoria_id) {
+              if(cat.category_id == atualCategory){
+                debugger
+                return el
+              }
+            }
+          }
+        });
+      }
+    
+
+
+      let type00 = fullData.sort(function(a: any, b: any) {
         let c: any = new Date(a.date);
         let d: any = new Date(b.date);
         let result = c - d;
         return result;
       });
-      let type01 = action.payload.data.filter((el: any) => {
+      let type01 = fullData.filter((el: any) => {
         if (el.type_id == 1) return el;
       });
-      let type02 = action.payload.data.filter((el: any) => {
+      let type02 = fullData.filter((el: any) => {
         if (el.type_id == 2) return el;
       });
-      let type03 = action.payload.data.filter((el: any) => {
+      let type03 = fullData.filter((el: any) => {
         if (el.type_id == 3) return el;
       });
-      let type04 = action.payload.data.filter((el: any) => {
+      let type04 = fullData.filter((el: any) => {
         if (el.type_id == 4) return el;
       });
       switch (action.payload.filters.payload.filter01.cashback) {
@@ -209,6 +229,9 @@ const reducer: Reducer<RepositoriesState> = (
         default:
           break;
       }
+
+
+
 
       type04 = type04
         .sort((a: any, b: any) => {

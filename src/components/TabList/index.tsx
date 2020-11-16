@@ -106,6 +106,7 @@ export default function SimpleTabs(props: any) {
   const classes = useStyles();
   const [value, setValue] = useState(4);
   const [checked, setChecked] = useState(true);
+  const [categoryFilter, setCategoryFilter] = useState(99);
 
   const handleChange = (event: any, newValue: any) => {
     setValue(newValue);
@@ -129,6 +130,92 @@ export default function SimpleTabs(props: any) {
     else setValue(4);
   }, []);
 
+  const handleCategoryFilter = (ev: any) => {
+    props.props.loadRequest({
+      filter01: {
+        cashback: props.props.selected,
+        category: Number(ev.target.value),
+      },
+    });
+    setCategoryFilter(ev.target.value);
+  };
+  const selctCategoryComponent = () => {
+    return (
+      <div style={{ height: 100 }}>
+        <div style={{ color: "#ffffff" }}>
+          Filtrar por <span style={{ fontWeight: "bolder" }}>Segmento</span>
+        </div>
+        <div
+          style={{
+            backgroundColor: "#ffffff",
+            width: 250,
+            borderRadius: 7,
+            marginBottom: 20,
+          }}
+        >
+          <NativeSelect
+            style={{
+              width: "100%",
+              background: "#252525",
+              color: "#fff",
+              borderRadius: 4,
+              borderColor: "#03AEFC",
+              textIndent: "0.01px",
+            }}
+            value={categoryFilter}
+            onChange={handleCategoryFilter}
+            inputProps={{
+              name: "age",
+              id: "age-native-label-placeholder",
+            }}
+          >
+            <option
+              style={{ backgroundColor: "#252525", color: "#fff" }}
+              value={99}
+            >
+              Todos os seguimentos
+            </option>
+            <option
+              style={{ backgroundColor: "#252525", color: "#fff" }}
+              value={1}
+            >
+              Alimentação
+            </option>
+            <option
+              style={{ backgroundColor: "#252525", color: "#fff" }}
+              value={2}
+            >
+              Automotivo
+            </option>
+            <option
+              style={{ backgroundColor: "#252525", color: "#fff" }}
+              value={3}
+            >
+              Beleza
+            </option>
+            <option
+              style={{ backgroundColor: "#252525", color: "#fff" }}
+              value={4}
+            >
+              Casa e Construção
+            </option>
+            <option
+              style={{ backgroundColor: "#252525", color: "#fff" }}
+              value={5}
+            >
+              Farmácia
+            </option>
+            <option
+              style={{ backgroundColor: "#252525", color: "#fff" }}
+              value={6}
+            >
+              Informática e Eletro
+            </option>
+          </NativeSelect>
+        </div>
+      </div>
+    );
+  };
 
   const searchComponent = (title: any) => {
     return (
@@ -302,14 +389,14 @@ export default function SimpleTabs(props: any) {
         className="text-center mb-3 garanta-brindes col"
       >
         <p data-v-fae5bece="">
-          Veja abaixo as promoções vigentes em nosso
-          site e garanta brindes ou vantagens exclusivos!
+          Veja abaixo as promoções vigentes em nosso site e garanta brindes ou
+          vantagens exclusivos!
         </p>
       </div>
       <TabPanel value={value} index={0}>
-        <div style={{ }}>
+        <div style={{}}>
           {searchComponent("Cupons de Desconto")}
-
+          {selctCategoryComponent()}
           {props.props.type01.length == 0 && (
             <Alert
               style={{
@@ -324,7 +411,9 @@ export default function SimpleTabs(props: any) {
               Nenhum benefício encontrado
             </Alert>
           )}
-          {props.props.type01.map((item: any) => {
+        
+        </div>
+        {props.props.type01.map((item: any) => {
             return (
               <Grow in={checked}>
                 <Paper elevation={0} style={{ background: "transparent" }}>
@@ -333,11 +422,11 @@ export default function SimpleTabs(props: any) {
               </Grow>
             );
           })}
-        </div>
       </TabPanel>
       <TabPanel value={value} index={1}>
-        <div style={{ }}>
+        <div style={{}}>
           {searchComponent("Promoções Exclusivas")}
+          {selctCategoryComponent()}
           {props.props.type02.length == 0 && (
             <Alert
               style={{
@@ -352,7 +441,9 @@ export default function SimpleTabs(props: any) {
               Nenhum benefício encontrado
             </Alert>
           )}
-          {props.props.type02.map((item: any) => {
+
+        </div>
+        {props.props.type02.map((item: any) => {
             return (
               <Grow in={checked}>
                 <Paper elevation={0} style={{ background: "transparent" }}>
@@ -361,12 +452,13 @@ export default function SimpleTabs(props: any) {
               </Grow>
             );
           })}
-        </div>
       </TabPanel>
       <TabPanel value={value} index={2}>
-        <div style={{ }}>
+        <div style={{}}>
           {searchComponent("Queda de Preço")}
-          <div style={{ height: 100 }}>
+          <div style={{ display: "flex", flexDirection: "row" }}>
+            {selctCategoryComponent()}
+            <div style={{ height: 100, marginLeft: 20 }}>
             <div style={{ color: "#ffffff" }}>
               Filtrar por <span style={{ fontWeight: "bolder" }}>Desconto</span>
             </div>
@@ -431,23 +523,13 @@ export default function SimpleTabs(props: any) {
                 </option>
               </NativeSelect>
             </div>
-            {props.props.type03.length == 0 && (
-              <Alert
-                style={{
-                  height: 100,
-                  display: "flex",
-                  fontSize: "1.1em",
-                  marginTop: 20,
-                  justifyContent: "center",
-                  alignItems: "center",
-                }}
-                severity="error"
-              >
-                Nenhum benefício encontrado
-              </Alert>
-            )}
+            
           </div>
-          {props.props.type03.map((item: any) => {
+          
+          </div>
+        </div>
+        
+        {props.props.type03.map((item: any) => {
             return (
               <Grow in={checked}>
                 <Paper elevation={0} style={{ background: "transparent" }}>
@@ -456,93 +538,126 @@ export default function SimpleTabs(props: any) {
               </Grow>
             );
           })}
-        </div>
+          {props.props.type03.length == 0 && (
+              <Alert
+                style={{
+                  height: 100,
+                  display: "flex",
+                  fontSize: "1.1em",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+                severity="error"
+              >
+                Nenhum benefício encontrado
+              </Alert>
+            )}
       </TabPanel>
       <TabPanel value={value} index={3}>
-        <div style={{ }}>
+        <div style={{}}>
           {searchComponent("Cashbacks BEM")}
-
-          <div style={{ height: 100 }}>
-            <div style={{ color: "#ffffff" }}>
-              Filtrar por <span style={{ fontWeight: "bolder" }}>Desconto</span>
-            </div>
-            <div
-              style={{
-                backgroundColor: "#ffffff",
-                width: 250,
-                borderRadius: 7,
-              }}
-            >
-              <NativeSelect
+          <div style={{ display: "flex", flexDirection: "row" }}>
+            {selctCategoryComponent()}
+            <div style={{ height: 100, marginLeft: 20 }}>
+              <div style={{ color: "#ffffff" }}>
+                Filtrar por{" "}
+                <span style={{ fontWeight: "bolder" }}>Desconto</span>
+              </div>
+              <div
                 style={{
-                  width: "100%",
-                  background: "#252525",
-                  color: "#fff",
-                  borderRadius: 4,
-                  borderColor: "#03AEFC",
-                  textIndent: "0.01px",
-                }}
-                value={props.props.selected}
-                onChange={props.props.handleChange}
-                inputProps={{
-                  name: "age",
-                  id: "age-native-label-placeholder",
+                  backgroundColor: "#ffffff",
+                  width: 250,
+                  borderRadius: 7,
                 }}
               >
-                <option
-                  style={{ backgroundColor: "#252525", color: "#fff" }}
-                  value={99}
+                <NativeSelect
+                  style={{
+                    width: "100%",
+                    background: "#252525",
+                    color: "#fff",
+                    borderRadius: 4,
+                    borderColor: "#03AEFC",
+                    textIndent: "0.01px",
+                  }}
+                  value={props.props.selected}
+                  onChange={props.props.handleChange}
+                  inputProps={{
+                    name: "age",
+                    id: "age-native-label-placeholder",
+                  }}
                 >
-                  Todas as faixas
-                </option>
-                <option
-                  style={{ backgroundColor: "#252525", color: "#fff" }}
-                  value={0}
-                >
-                  de 1% a 10% OFF
-                </option>
-                <option
-                  style={{ backgroundColor: "#252525", color: "#fff" }}
-                  value={1}
-                >
-                  de 11% a 20% OFF
-                </option>
-                <option
-                  style={{ backgroundColor: "#252525", color: "#fff" }}
-                  value={2}
-                >
-                  de 21% a 30% OFF
-                </option>
-                <option
-                  style={{ backgroundColor: "#252525", color: "#fff" }}
-                  value={3}
-                >
-                  de 31% a 50% OFF
-                </option>
-                <option
-                  style={{ backgroundColor: "#252525", color: "#fff" }}
-                  value={4}
-                >
-                  acima de 50% OFF
-                </option>
-              </NativeSelect>
+                  <option
+                    style={{ backgroundColor: "#252525", color: "#fff" }}
+                    value={99}
+                  >
+                    Todas as faixas
+                  </option>
+                  <option
+                    style={{ backgroundColor: "#252525", color: "#fff" }}
+                    value={0}
+                  >
+                    de 1% a 10% OFF
+                  </option>
+                  <option
+                    style={{ backgroundColor: "#252525", color: "#fff" }}
+                    value={1}
+                  >
+                    de 11% a 20% OFF
+                  </option>
+                  <option
+                    style={{ backgroundColor: "#252525", color: "#fff" }}
+                    value={2}
+                  >
+                    de 21% a 30% OFF
+                  </option>
+                  <option
+                    style={{ backgroundColor: "#252525", color: "#fff" }}
+                    value={3}
+                  >
+                    de 31% a 50% OFF
+                  </option>
+                  <option
+                    style={{ backgroundColor: "#252525", color: "#fff" }}
+                    value={4}
+                  >
+                    acima de 50% OFF
+                  </option>
+                </NativeSelect>
+              </div>
             </div>
-            {props.props.type04.length == 0 && (
-              <Alert
-                style={{
-                  height: 100,
-                  display: "flex",
-                  fontSize: "1.1em",
-                  justifyContent: "center",
-                  alignItems: "center",
-                }}
-                severity="error"
-              >
-                Nenhum benefício encontrado
-              </Alert>
-            )}
+             
           </div>
-          {props.props.type04.map((item: any) => {
+        </div>
+        
+        {props.props.type04.map((item: any) => {
+            return (
+              <Grow in={checked}>
+                <Paper elevation={0} style={{ background: "transparent" }}>
+                  <BeneficioItem item={item} />
+                </Paper>
+              </Grow>
+            );
+          })}
+           {props.props.type04.length == 0 && (
+                <Alert
+                  style={{
+                    height: 100,
+                    display: "flex",
+                    fontSize: "1.1em",
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                  severity="error"
+                >
+                  Nenhum benefício encontrado
+                </Alert>
+              )}
+      </TabPanel>
+      <TabPanel value={value} index={4}>
+        <div style={{}}>
+          {searchComponent("Cashbacks BEM")}
+          {selctCategoryComponent()}
+          {props.props.type00.map((item: any) => {
             return (
               <Grow in={checked}>
                 <Paper elevation={0} style={{ background: "transparent" }}>
@@ -552,11 +667,8 @@ export default function SimpleTabs(props: any) {
             );
           })}
         </div>
-      </TabPanel>
-      <TabPanel value={value} index={4}>
-        <div style={{ }}>
-          {searchComponent("Cashbacks BEM")}
-          {props.props.type00.length == 0 && (
+        
+        {props.props.type00.length == 0 && (
             <Alert
               style={{
                 height: 100,
@@ -570,16 +682,7 @@ export default function SimpleTabs(props: any) {
               Nenhum benefício encontrado
             </Alert>
           )}
-          {props.props.type00.map((item: any) => {
-            return (
-              <Grow in={checked}>
-                <Paper elevation={0} style={{ background: "transparent" }}>
-                  <BeneficioItem item={item} />
-                </Paper>
-              </Grow>
-            );
-          })}
-        </div>
+      
       </TabPanel>
     </div>
   );

@@ -14,7 +14,6 @@ export function* load(filters: any) {
     });
 
     let auth: any = response1.data.access_token;
-    debugger
     var cnpj = location.search.split('cnpj=')[1]
 
     if(cnpj)

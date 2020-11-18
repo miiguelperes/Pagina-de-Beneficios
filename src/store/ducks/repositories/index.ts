@@ -25,77 +25,58 @@ const reducer: Reducer<RepositoriesState> = (
 ) => {
   switch (action.type) {
     case RepositoriesTypes.SEARCH_DATA:
-      if (action.payload != "") {
-        let type0 = state.type00.filter((benefit) => {
-          return (
-            benefit.title
+      let type0 = undefined
+      let type1 = undefined
+      let type2 = undefined
+      let type3 = undefined
+      let type4 = undefined
+
+        if (action.payload.length < state.search.length) {
+          type0 = state.oldtype00
+          type1 = state.oldtype01
+          type2 = state.oldtype02
+          type3 = state.oldtype03
+          type4 = state.oldtype04
+        }else{
+        
+          type0 = state.type00.filter((benefit) => {
+            return benefit.title
               .toLowerCase()
-              .includes(action.payload.toLowerCase()) ||
-            benefit.description
+              .includes(action.payload.toLowerCase()) || benefit.description
+                .toLowerCase()
+                .includes(action.payload.toLowerCase())
+          });
+          type1 = state.type01.filter((benefit) => {
+            return benefit.title
               .toLowerCase()
-              .includes(action.payload.toLowerCase())
-          );
-        });
-        let type1 = state.type01.filter((benefit) => {
-          return (
-            benefit.title
+              .includes(action.payload.toLowerCase()) || benefit.description
+                .toLowerCase()
+                .includes(action.payload.toLowerCase())
+          });
+          type2 = state.type02.filter((benefit) => {
+            return benefit.title
               .toLowerCase()
-              .includes(action.payload.toLowerCase()) ||
-            benefit.description
+              .includes(action.payload.toLowerCase()) || benefit.description
+                .toLowerCase()
+                .includes(action.payload.toLowerCase())
+          });
+          type3 = state.type03.filter((benefit) => {
+            return benefit.title
               .toLowerCase()
-              .includes(action.payload.toLowerCase())
-          );
-        });
-        let type2 = state.type02.filter((benefit) => {
-          return (
-            benefit.title
+              .includes(action.payload.toLowerCase()) || benefit.description
+                .toLowerCase()
+                .includes(action.payload.toLowerCase())
+          });
+          type4 = state.type04.filter((benefit) => {
+            return benefit.title
               .toLowerCase()
-              .includes(action.payload.toLowerCase()) ||
-            benefit.description
-              .toLowerCase()
-              .includes(action.payload.toLowerCase())
-          );
-        });
-        let type3 = state.type03.filter((benefit) => {
-          return (
-            benefit.title
-              .toLowerCase()
-              .includes(action.payload.toLowerCase()) ||
-            benefit.description
-              .toLowerCase()
-              .includes(action.payload.toLowerCase())
-          );
-        });
-        let type4 = state.type04.filter((benefit) => {
-          return (
-            benefit.title
-              .toLowerCase()
-              .includes(action.payload.toLowerCase()) ||
-            benefit.description
-              .toLowerCase()
-              .includes(action.payload.toLowerCase())
-          );
-        });
-        return {
-          ...state,
-          type00: type0,
-          type01: type1,
-          type02: type2,
-          type03: type3,
-          type04: type4,
-          search: action.payload,
-        };
-      } else {
-        return {
-          ...state,
-          type00: state.oldtype00,
-          type04: state.oldtype04,
-          type03: state.oldtype03,
-          type02: state.oldtype02,
-          type01: state.oldtype01,
-          search: action.payload,
-        };
-      }
+              .includes(action.payload.toLowerCase()) || benefit.description
+                .toLowerCase()
+                .includes(action.payload.toLowerCase())
+          });
+        }
+        return { ...state, type00: type0, type01: type1, type02: type2, type03: type3, type04: type4, search: action.payload }
+        
 
     case RepositoriesTypes.SAVE_SELECTED:
       console.log(action.payload);

@@ -140,7 +140,7 @@ export default function SimpleTabs(props: any) {
     setCategoryFilter(ev.target.value);
   };
   const selctCategoryComponent = () => {
-    return (
+    return (/*
       <div style={{ height: 100 }}>
         <div style={{ color: "#ffffff" }}>
           Filtrar por <span style={{ fontWeight: "bolder" }}>Segmento</span>
@@ -213,7 +213,7 @@ export default function SimpleTabs(props: any) {
             </option>
           </NativeSelect>
         </div>
-      </div>
+      </div>*/<div></div>
     );
   };
 

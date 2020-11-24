@@ -108,9 +108,7 @@ export default function SimpleTabs(props: any) {
   const [checked, setChecked] = useState(true);
   const [categoryFilter, setCategoryFilter] = useState(99);
 
-  const handleChange = (event: any, newValue: any) => {
-    setValue(newValue);
-  };
+
   /*
   useEffect(() => {
     if (props.props.type00.length == 0) {
@@ -269,6 +267,13 @@ export default function SimpleTabs(props: any) {
       </div>
     );
   };
+  
+  const handleChange = (event: any, newValue: any) =>{
+    debugger
+    props.props.saveSelected(99)
+    setValue(newValue);
+  };
+
   return (
     <div className={classes.root}>
       <AppBar position="static">
@@ -288,7 +293,7 @@ export default function SimpleTabs(props: any) {
             component={() => (
               <Button
                 style={{ minWidth: 180, maxWidth: "100%" }}
-                onClick={() => setValue(3)}
+                onClick={() => { setValue(3); props.props.saveSelected(99); props.props.loadRequest({ filter01: { cashback: 99, category: 99 } })}}
               >
                 {value == 3 ? (
                   <img
@@ -313,7 +318,7 @@ export default function SimpleTabs(props: any) {
             component={() => (
               <Button
                 style={{ minWidth: 180, maxWidth: "100%" }}
-                onClick={() => setValue(1)}
+                onClick={() => { setValue(1); props.props.saveSelected(99); props.props.loadRequest({ filter01: { cashback: 99, category: 99 } })}}
               >
                 {value == 1 ? (
                   <img
@@ -337,7 +342,7 @@ export default function SimpleTabs(props: any) {
             component={() => (
               <Button
                 style={{ minWidth: 180, maxWidth: "100%" }}
-                onClick={() => setValue(2)}
+                onClick={() => { setValue(2); props.props.saveSelected(99); props.props.loadRequest({ filter01: { cashback: 99, category: 99 } })}}
               >
                 {value == 2 ? (
                   <img
@@ -362,7 +367,7 @@ export default function SimpleTabs(props: any) {
             component={() => (
               <Button
                 style={{ minWidth: 180, maxWidth: "100%" }}
-                onClick={() => setValue(0)}
+                onClick={() => { setValue(0); props.props.saveSelected(99); props.props.loadRequest({ filter01: { cashback: 99, category: 99 } })}}
               >
                 {value == 0 ? (
                   <img

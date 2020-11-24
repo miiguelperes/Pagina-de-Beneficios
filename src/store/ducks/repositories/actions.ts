@@ -13,3 +13,5 @@ export const saveSelected = (value: any) => action(RepositoriesTypes.SAVE_SELECT
 
 export const searchData = (value: any) => action(RepositoriesTypes.SEARCH_DATA, value);
 
+export const clearData = () => action(RepositoriesTypes.CLEAR_DATA);
+

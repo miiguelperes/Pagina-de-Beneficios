@@ -32,7 +32,8 @@ interface DispatchProps {
   loadRequest(filters: any): void,
   saveSelected(filters: any): void,
   searchData(search: any): void,
-  loadLogin(): void
+  loadLogin(): void,
+  clearData(): void
 }
 
 type Props = StateProps & DispatchProps
@@ -51,12 +52,20 @@ class LayoutHome extends Component<Props> {
   handleChange = (event: any) => {
     const { loadRequest, saveSelected } = this.props;
     saveSelected(event.target.value)
+    
     loadRequest({ filter01: { cashback: Number(event.target.value), category: 99 } });
   }
 
-  render() {
-    const { type01, type02, type03, type04, selectValue, search, searchData, loading, selected, loadRequest } = this.props;
+  handlePage = () => {
+    const { loadRequest, saveSelected, clearData } = this.props;
+    saveSelected(99);
+    debugger
+    loadRequest({ filter01: { cashback: 99, category: 99 } });
+    clearData()
+  }
 
+  render() {
+    const { type01, type02, type03, type04, selectValue, search, searchData, loading, selected, loadRequest, saveSelected, clearData } = this.props;
     return (
       <div>
         <Header />
@@ -65,7 +74,7 @@ class LayoutHome extends Component<Props> {
         
         <div style={{ fontFamily: "Lato", marginBottom: 150, paddingBottom: 200 }} >
           
-          <TabList props={{...this.props, handleChange: this.handleChange, loadRequest}} />
+          <TabList props={{...this.props,  handleChange: this.handleChange, loadRequest,clearData, handlePage: this.handlePage}} />
         </div>
       </Container>
       <Backdrop show={loading}/>

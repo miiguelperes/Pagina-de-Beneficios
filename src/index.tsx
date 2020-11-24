@@ -3,10 +3,10 @@ import "./defaultStyle.css";
 import ReactDOM from "react-dom";
 import App from "./App";
 import "bootstrap/dist/css/bootstrap.min.css";
-console.log("Bem vindo ao Martins!");
+/*console.log("Bem vindo ao Martins!");
 console.log = () => {};
 console.error = () => {};
-console.warn = () => {};
+console.warn = () => {};*/
 window.addEventListener(
   "message",
   function receiveMessage(event: any) {

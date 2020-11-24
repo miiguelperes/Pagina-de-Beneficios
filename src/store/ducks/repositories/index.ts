@@ -149,7 +149,7 @@ const reducer: Reducer<RepositoriesState> = (
         case 0:
           type04 = type04.filter((el: any) => {
             let cashback = Number(el.cashback.replace(",", "."));
-            if (cashback > 1 && cashback < 10) {
+            if (cashback >= 1 && cashback <= 10) {
               return el;
             }
           });
@@ -157,7 +157,7 @@ const reducer: Reducer<RepositoriesState> = (
             let discount = Number(
               el.discount.replace(/\D/g, "").replace(",", ".")
             );
-            if (discount > 1 && discount < 10) {
+            if (discount >= 1 && discount <= 10) {
               return el;
             }
           });
@@ -165,7 +165,7 @@ const reducer: Reducer<RepositoriesState> = (
         case 1:
           type04 = type04.filter((el: any) => {
             let cashback = Number(el.cashback.replace(",", "."));
-            if (cashback > 11 && cashback < 20) {
+            if (cashback >= 11 && cashback <= 20) {
               return el;
             }
           });
@@ -173,7 +173,7 @@ const reducer: Reducer<RepositoriesState> = (
             let discount = Number(
               el.discount.replace(/\D/g, "").replace(",", ".")
             );
-            if (discount > 11 && discount < 20) {
+            if (discount >= 11 && discount <= 20) {
               return el;
             }
           });
@@ -181,7 +181,7 @@ const reducer: Reducer<RepositoriesState> = (
         case 2:
           type04 = type04.filter((el: any) => {
             let cashback = Number(el.cashback.replace(",", "."));
-            if (cashback > 21 && cashback < 30) {
+            if (cashback >= 21 && cashback <= 30) {
               return el;
             }
           });
@@ -189,7 +189,7 @@ const reducer: Reducer<RepositoriesState> = (
             let discount = Number(
               el.discount.replace(/\D/g, "").replace(",", ".")
             );
-            if (discount > 21 && discount < 30) {
+            if (discount >= 21 && discount <= 30) {
               return el;
             }
           });
@@ -197,7 +197,7 @@ const reducer: Reducer<RepositoriesState> = (
         case 3:
           type04 = type04.filter((el: any) => {
             let cashback = Number(el.cashback.replace(",", "."));
-            if (cashback > 31 && cashback < 50) {
+            if (cashback >= 31 && cashback <= 50) {
               return el;
             }
           });
@@ -213,7 +213,7 @@ const reducer: Reducer<RepositoriesState> = (
         case 4:
           type04 = type04.filter((el: any) => {
             let cashback = Number(el.cashback.replace(",", "."));
-            if (cashback > 50) {
+            if (cashback >= 50) {
               return el;
             }
           });
@@ -221,12 +221,13 @@ const reducer: Reducer<RepositoriesState> = (
             let discount = Number(
               el.discount.replace(/\D/g, "").replace(",", ".")
             );
-            if (discount > 50) {
+            if (discount >= 50) {
               return el;
             }
           });
           break;
         default:
+          
           break;
       }
 

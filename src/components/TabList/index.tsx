@@ -138,7 +138,6 @@ export default function SimpleTabs(props: any) {
     setCategoryFilter(ev.target.value);
   };
   const selctCategoryComponent = () => {
-    return <div/>
     return (
       <div style={{ height: 100 }}>
         <div style={{ color: "#ffffff" }}>

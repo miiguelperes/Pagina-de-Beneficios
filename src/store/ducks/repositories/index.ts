@@ -120,14 +120,13 @@ const reducer: Reducer<RepositoriesState> = (
           if(el.categoria_id){
             for (const cat of el.categoria_id) {
               if(cat.category_id == atualCategory){
-                debugger
                 return el
               }
             }
           }
         });
       }
-    
+      
 
 
       var type00 = fullData.sort(function(a: any, b: any) {
@@ -141,36 +140,33 @@ const reducer: Reducer<RepositoriesState> = (
       var type03 = null;
       var type04 = null;
 
-      var initialType01 = fullData.filter((el: any) => {
+
+      var type01 = fullData.filter((el: any) => {
         if (el.type_id == 1) return el;
       });
       
-      var initialType02 = fullData.filter((el: any) => {
+      var type02 = fullData.filter((el: any) => {
         if (el.type_id == 2) return el;
       });
-      var initialType03 = fullData.filter((el: any) => {
+      var type03 = fullData.filter((el: any) => {
         if (el.type_id == 3) return el;
       });
-      var initialType04 = fullData.filter((el: any) => {
+      var type04 = fullData.filter((el: any) => {
         if (el.type_id == 4) return el;
       });
       
-      debugger
       switch (action.payload.filters.payload.filter01.cashback) {
         case 99:
-          type01 = initialType01;
-          type02 = initialType02;
-          type03 = initialType03;
-          type04 = initialType04;
+ 
           break;
         case 0:
-          type04 = initialType04.filter((el: any) => {
+          type04 = type04.filter((el: any) => {
             let cashback = Number(el.cashback.replace(",", "."));
             if (cashback >= 1 && cashback <= 10) {
               return el;
             }
           });
-          type03 = initialType03.filter((el: any) => {
+          type03 = type03.filter((el: any) => {
             let discount = Number(
               el.discount.replace(/\D/g, "").replace(",", ".")
             );
@@ -180,13 +176,13 @@ const reducer: Reducer<RepositoriesState> = (
           });
           break;
         case 1:
-          type04 = initialType04.filter((el: any) => {
+          type04 = type04.filter((el: any) => {
             let cashback = Number(el.cashback.replace(",", "."));
             if (cashback >= 11 && cashback <= 20) {
               return el;
             }
           });
-          type03 = initialType03.filter((el: any) => {
+          type03 = type03.filter((el: any) => {
             let discount = Number(
               el.discount.replace(/\D/g, "").replace(",", ".")
             );
@@ -196,13 +192,13 @@ const reducer: Reducer<RepositoriesState> = (
           });
           break;
         case 2:
-          type04 = initialType04.filter((el: any) => {
+          type04 = type04.filter((el: any) => {
             let cashback = Number(el.cashback.replace(",", "."));
             if (cashback >= 21 && cashback <= 30) {
               return el;
             }
           });
-          type03 = initialType03.filter((el: any) => {
+          type03 = type03.filter((el: any) => {
             let discount = Number(
               el.discount.replace(/\D/g, "").replace(",", ".")
             );
@@ -212,33 +208,33 @@ const reducer: Reducer<RepositoriesState> = (
           });
           break;
         case 3:
-          type04 = initialType04.filter((el: any) => {
+          type04 = type04.filter((el: any) => {
             let cashback = Number(el.cashback.replace(",", "."));
             if (cashback >= 31 && cashback <= 50) {
               return el;
             }
           });
-          type03 = initialType03.filter((el: any) => {
+          type03 = type03.filter((el: any) => {
             let discount = Number(
               el.discount.replace(/\D/g, "").replace(",", ".")
             );
-            if (discount > 31 && discount < 50) {
+            if (discount >= 31 && discount <= 50) {
               return el;
             }
           });
           break;
         case 4:
-          type04 = initialType04.filter((el: any) => {
+          type04 = type04.filter((el: any) => {
             let cashback = Number(el.cashback.replace(",", "."));
-            if (cashback >= 50) {
+            if (cashback > 50) {
               return el;
             }
           });
-          type03 = initialType03.filter((el: any) => {
+          type03 = type03.filter((el: any) => {
             let discount = Number(
               el.discount.replace(/\D/g, "").replace(",", ".")
             );
-            if (discount >= 50) {
+            if (discount > 50) {
               return el;
             }
           });
@@ -247,9 +243,6 @@ const reducer: Reducer<RepositoriesState> = (
           
           break;
       }
-
-
-
 
       type04 = type04
         .sort((a: any, b: any) => {
@@ -272,8 +265,8 @@ const reducer: Reducer<RepositoriesState> = (
         loading: false,
         error: false,
         type00,
-        type01: initialType01,
-        type02: initialType02,
+        type01,
+        type02,
         type03,
         type04,
         oldtype04: state.initialType04,
@@ -295,11 +288,21 @@ const reducer: Reducer<RepositoriesState> = (
         ...state,
         loading: false,
         error: true,
-        type04: state.initialType04,
-        type03: state.initialType03,
-        type02: state.initialType02,
-        type01: state.initialType01,
-        type00: state.initialType00,
+        type00: [],
+        type01: [],
+        type02: [],
+        type03: [],
+        type04: [],
+        oldtype00: [],
+        oldtype01: [],
+        oldtype02: [],
+        oldtype03: [],
+        oldtype04: [],
+        initialType00: [],
+        initialType01: [],
+        initialType02: [],
+        initialType03: [],
+        initialType04: []
       };
       break
     default:

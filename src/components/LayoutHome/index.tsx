@@ -59,7 +59,6 @@ class LayoutHome extends Component<Props> {
   handlePage = () => {
     const { loadRequest, saveSelected, clearData } = this.props;
     saveSelected(99);
-    debugger
     loadRequest({ filter01: { cashback: 99, category: 99 } });
     clearData()
   }

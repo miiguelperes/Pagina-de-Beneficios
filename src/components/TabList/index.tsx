@@ -172,7 +172,7 @@ export default function SimpleTabs(props: any) {
               style={{ backgroundColor: "#252525", color: "#fff" }}
               value={99}
             >
-              Todos os seguimentos
+              Todos os segmentos
             </option>
             <option
               style={{ backgroundColor: "#252525", color: "#fff" }}
@@ -190,25 +190,25 @@ export default function SimpleTabs(props: any) {
               style={{ backgroundColor: "#252525", color: "#fff" }}
               value={3}
             >
-              Beleza
+              Farmácia
             </option>
             <option
               style={{ backgroundColor: "#252525", color: "#fff" }}
               value={4}
             >
-              Casa e Construção
+              Informática e Eletro
             </option>
             <option
               style={{ backgroundColor: "#252525", color: "#fff" }}
               value={5}
             >
-              Farmácia
+              Casa e Construção
             </option>
             <option
               style={{ backgroundColor: "#252525", color: "#fff" }}
               value={6}
             >
-              Informática e Eletro
+              Beleza
             </option>
           </NativeSelect>
         </div>

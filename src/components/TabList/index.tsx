@@ -8,14 +8,14 @@ import Box from "@material-ui/core/Box";
 import BeneficioItem from "../BeneficioItem";
 import Switch from "@material-ui/core/Switch";
 import Grow from "@material-ui/core/Grow";
-import Cashback_filter from "../../assets/cashback_filter.jpg";
-import Desconto_filter from "../../assets/desconto_filter.jpg";
-import Preco_filter from "../../assets/preco_filter.jpg";
-import Promocao_filter from "../../assets/promocao_filter.jpg";
-import Cashback_filter_hover from "../../assets/cashback_filter_hover.jpg";
-import Desconto_filter_hover from "../../assets/desconto_filter_hover.jpg";
-import Preco_filter_hover from "../../assets/preco_filter_hover.jpg";
-import Promocao_filter_hover from "../../assets/promocao_filter_hover.jpg";
+import Cashback_filter from "../../assets/cashback_filter.png";
+import Desconto_filter from "../../assets/desconto_filter.png";
+import Preco_filter from "../../assets/preco_filter.png";
+import Promocao_filter from "../../assets/promocao_filter.png";
+import Cashback_filter_hover from "../../assets/cashback_filter_hover.png";
+import Desconto_filter_hover from "../../assets/desconto_filter_hover.png";
+import Preco_filter_hover from "../../assets/preco_filter_hover.png";
+import Promocao_filter_hover from "../../assets/promocao_filter_hover.png";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
@@ -141,12 +141,11 @@ export default function SimpleTabs(props: any) {
   const selctCategoryComponent = () => {
     return (
       <div style={{ height: 100 }}>
-        <div style={{ color: "#ffffff" }}>
+        <div style={{ color: "inherit" }}>
           Filtrar por <span style={{ fontWeight: "bolder" }}>Segmento</span>
         </div>
         <div
           style={{
-            backgroundColor: "#ffffff",
             width: 250,
             borderRadius: 7,
             marginBottom: 20,
@@ -155,8 +154,8 @@ export default function SimpleTabs(props: any) {
           <NativeSelect
             style={{
               width: "100%",
-              background: "#252525",
-              color: "#fff",
+              backgroundColor: "#fff",
+              color: "#6d7384",
               borderRadius: 4,
               borderColor: "#03AEFC",
               textIndent: "0.01px",
@@ -169,79 +168,79 @@ export default function SimpleTabs(props: any) {
             }}
           >
             <option
-              style={{ backgroundColor: "#252525", color: "#fff" }}
+              style={{  color: "#6d7384" }}
               value={99}
             >
               Todos os segmentos
             </option>
             <option
-              style={{ backgroundColor: "#252525", color: "#fff" }}
+              style={{  color: "#6d7384" }}
               value={1}
             >
               Alimentação
             </option>
             <option
-              style={{ backgroundColor: "#252525", color: "#fff" }}
+              style={{  color: "#6d7384" }}
               value={2}
             >
               Automotivo
             </option>
             <option
-              style={{ backgroundColor: "#252525", color: "#fff" }}
+              style={{  color: "#6d7384" }}
               value={3}
             >
               Farmácia
             </option>
             <option
-              style={{ backgroundColor: "#252525", color: "#fff" }}
+              style={{  color: "#6d7384" }}
               value={4}
             >
               Informática e Eletro
             </option>
             <option
-              style={{ backgroundColor: "#252525", color: "#fff" }}
+              style={{  color: "#6d7384" }}
               value={5}
             >
               Casa e Construção
             </option>
             <option
-              style={{ backgroundColor: "#252525", color: "#fff" }}
+              style={{  color: "#6d7384" }}
               value={6}
             >
               Beleza
             </option>
             <option
-              style={{ backgroundColor: "#252525", color: "#fff" }}
+              style={{  color: "#6d7384" }}
               value={7}
             >
               Eletrodomésticos
             </option>
             <option
-              style={{ backgroundColor: "#252525", color: "#fff" }}
+              style={{  color: "#6d7384" }}
               value={8}
             >
               Agro Veterinários
             </option>
             <option
-              style={{ backgroundColor: "#252525", color: "#fff" }}
+              style={{  color: "#6d7384" }}
               value={9}
             >
               Limpeza
             </option>
             <option
-              style={{ backgroundColor: "#252525", color: "#fff" }}
+              style={{  color: "#6d7384" }}
               value={10}
             >
               Esporte e Lazer
             </option>
             <option
-              style={{ backgroundColor: "#252525", color: "#fff" }}
+              style={{  color: "#6d7384" }}
               value={11}
             >
               Papelaria
             </option>
             <option
-              style={{ backgroundColor: "#252525", color: "#fff" }}
+              style={{  color: "#6d7384" }}
               value={12}
             >
               Indústria e Comércio
@@ -328,18 +327,18 @@ export default function SimpleTabs(props: any) {
           <Tab
             component={() => (
               <Button
-                style={{ minWidth: 180, maxWidth: "100%" }}
+                style={{ minWidth: 180, maxWidth: "100%", width: "25%", padding: "1px" }}
                 onClick={() => { setValue(3); props.props.clearData();props.props.saveSelected(99); setCategoryFilter(99); props.props.loadRequest({ filter01: { cashback: 99, category: 99 } })}}
               >
                 {value == 3 ? (
                   <img
-                    style={{ objectFit: "cover", height: 120 }}
+                    style={{ objectFit: "cover" }}
                     src={Cashback_filter_hover}
                     alt={"Cashback_filter_hover"}
                   />
                 ) : (
                   <img
-                    style={{ objectFit: "cover", height: 120 }}
+                    style={{ objectFit: "cover" }}
                     src={Cashback_filter}
                     alt={"Cashback_filter"}
                   />
@@ -349,22 +348,21 @@ export default function SimpleTabs(props: any) {
             label="Item quer"
             {...a11yProps(3)}
           />
-
           <Tab
             component={() => (
               <Button
-                style={{ minWidth: 180, maxWidth: "100%" }}
+                style={{ minWidth: 180, maxWidth: "100%", width: "25%", padding: "1px" }}
                 onClick={() => { props.props.clearData(); setValue(1); props.props.saveSelected(99);  setCategoryFilter(99); props.props.loadRequest({ filter01: { cashback: 99, category: 99 } })}}
               >
                 {value == 1 ? (
                   <img
-                    style={{ objectFit: "cover", height: 120 }}
+                    style={{ objectFit: "cover" }}
                     src={Promocao_filter_hover}
                     alt={"Promocao_filter_hover"}
                   />
                 ) : (
                   <img
-                    style={{ objectFit: "cover", height: 120 }}
+                    style={{ objectFit: "cover" }}
                     src={Promocao_filter}
                     alt={"Promocao_filter"}
                   />
@@ -377,18 +375,18 @@ export default function SimpleTabs(props: any) {
           <Tab
             component={() => (
               <Button
-                style={{ minWidth: 180, maxWidth: "100%" }}
+                style={{ minWidth: 180, maxWidth: "100%", width: "25%", padding: "1px" }}
                 onClick={() => { props.props.clearData();setValue(2); props.props.saveSelected(99);  setCategoryFilter(99); props.props.loadRequest({ filter01: { cashback: 99, category: 99 } })}}
               >
                 {value == 2 ? (
                   <img
-                    style={{ objectFit: "cover", height: 120 }}
+                    style={{ objectFit: "cover" }}
                     src={Preco_filter_hover}
                     alt={"Preco_filter_hover"}
                   />
                 ) : (
                   <img
-                    style={{ objectFit: "cover", height: 120 }}
+                    style={{ objectFit: "cover" }}
                     src={Preco_filter}
                     alt={"Preco_filter"}
                   />
@@ -402,18 +400,18 @@ export default function SimpleTabs(props: any) {
             disableRipple
             component={() => (
               <Button
-                style={{ minWidth: 180, maxWidth: "100%" }}
+                style={{ minWidth: 180, maxWidth: "100%", width: "25%", padding: "1px" }}
                 onClick={() => { props.props.clearData();setValue(0); props.props.saveSelected(99);  setCategoryFilter(99); props.props.loadRequest({ filter01: { cashback: 99, category: 99 } })}}
               >
                 {value == 0 ? (
                   <img
-                    style={{ objectFit: "cover", height: 120 }}
+                    style={{ objectFit: "cover" }}
                     src={Desconto_filter_hover}
                     alt={"Desconto_filter_hover"}
                   />
                 ) : (
                   <img
-                    style={{ objectFit: "cover", height: 120 }}
+                    style={{ objectFit: "cover" }}
                     src={Desconto_filter}
                     alt={"Desconto_filter"}
                   />
@@ -501,12 +499,11 @@ export default function SimpleTabs(props: any) {
           <div style={{ display: "flex", flexDirection: "row" }}>
             {selctCategoryComponent()}
             <div style={{ height: 100, marginLeft: 20 }}>
-            <div style={{ color: "#ffffff" }}>
+            <div style={{ color: "inherit" }}>
               Filtrar por <span style={{ fontWeight: "bolder" }}>Desconto</span>
             </div>
             <div
               style={{
-                backgroundColor: "#ffffff",
                 width: 250,
                 borderRadius: 7,
               }}
@@ -514,8 +511,8 @@ export default function SimpleTabs(props: any) {
               <NativeSelect
                 style={{
                   width: "100%",
-                  background: "#252525",
-                  color: "#fff",
+                  backgroundColor: "#fff",
+                  color: "#6d7384",
                   borderRadius: 4,
                   borderColor: "#03AEFC",
                   textIndent: "0.01px",
@@ -528,37 +525,37 @@ export default function SimpleTabs(props: any) {
                 }}
               >
                 <option
-                  style={{ backgroundColor: "#252525", color: "#fff" }}
+                  style={{ color: "#6d7384" }}
                   value={99}
                 >
                   Todas as faixas
                 </option>
                 <option
-                  style={{ backgroundColor: "#252525", color: "#fff" }}
+                  style={{ color: "#6d7384" }}
                   value={0}
                 >
                   de 1% a 10% OFF
                 </option>
                 <option
-                  style={{ backgroundColor: "#252525", color: "#fff" }}
+                  style={{ color: "#6d7384" }}
                   value={1}
                 >
                   de 11% a 20% OFF
                 </option>
                 <option
-                  style={{ backgroundColor: "#252525", color: "#fff" }}
+                  style={{ color: "#6d7384" }}
                   value={2}
                 >
                   de 21% a 30% OFF
                 </option>
                 <option
-                  style={{ backgroundColor: "#252525", color: "#fff" }}
+                  style={{ color: "#6d7384" }}
                   value={3}
                 >
                   de 31% a 50% OFF
                 </option>
                 <option
-                  style={{ backgroundColor: "#252525", color: "#fff" }}
+                  style={{ color: "#6d7384" }}
                   value={4}
                 >
                   acima de 50% OFF
@@ -601,13 +598,12 @@ export default function SimpleTabs(props: any) {
           <div style={{ display: "flex", flexDirection: "row" }}>
             {selctCategoryComponent()}
             <div style={{ height: 100, marginLeft: 20 }}>
-              <div style={{ color: "#ffffff" }}>
+              <div style={{ color: "inherit" }}>
                 Filtrar por{" "}
                 <span style={{ fontWeight: "bolder" }}>Desconto</span>
               </div>
               <div
                 style={{
-                  backgroundColor: "#ffffff",
                   width: 250,
                   borderRadius: 7,
                 }}
@@ -615,8 +611,8 @@ export default function SimpleTabs(props: any) {
                 <NativeSelect
                   style={{
                     width: "100%",
-                    background: "#252525",
-                    color: "#fff",
+                    backgroundColor: "#fff",
+                    color: "#6d7384",
                     borderRadius: 4,
                     borderColor: "#03AEFC",
                     textIndent: "0.01px",
@@ -629,37 +625,37 @@ export default function SimpleTabs(props: any) {
                   }}
                 >
                   <option
-                    style={{ backgroundColor: "#252525", color: "#fff" }}
+                    style={{ color: "#6d7384" }}
                     value={99}
                   >
                     Todas as faixas
                   </option>
                   <option
-                    style={{ backgroundColor: "#252525", color: "#fff" }}
+                    style={{ color: "#6d7384" }}
                     value={0}
                   >
                     de 1% a 10% OFF
                   </option>
                   <option
-                    style={{ backgroundColor: "#252525", color: "#fff" }}
+                    style={{ color: "#6d7384" }}
                     value={1}
                   >
                     de 11% a 20% OFF
                   </option>
                   <option
-                    style={{ backgroundColor: "#252525", color: "#fff" }}
+                    style={{ color: "#6d7384" }}
                     value={2}
                   >
                     de 21% a 30% OFF
                   </option>
                   <option
-                    style={{ backgroundColor: "#252525", color: "#fff" }}
+                    style={{ color: "#6d7384" }}
                     value={3}
                   >
                     de 31% a 50% OFF
                   </option>
                   <option
-                    style={{ backgroundColor: "#252525", color: "#fff" }}
+                    style={{ color: "#6d7384" }}
                     value={4}
                   >
                     acima de 50% OFF

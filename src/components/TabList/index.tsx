@@ -210,6 +210,42 @@ export default function SimpleTabs(props: any) {
             >
               Beleza
             </option>
+            <option
+              style={{ backgroundColor: "#252525", color: "#fff" }}
+              value={7}
+            >
+              Eletrodomésticos
+            </option>
+            <option
+              style={{ backgroundColor: "#252525", color: "#fff" }}
+              value={8}
+            >
+              Agro Veterinários
+            </option>
+            <option
+              style={{ backgroundColor: "#252525", color: "#fff" }}
+              value={9}
+            >
+              Limpeza
+            </option>
+            <option
+              style={{ backgroundColor: "#252525", color: "#fff" }}
+              value={10}
+            >
+              Esporte e Lazer
+            </option>
+            <option
+              style={{ backgroundColor: "#252525", color: "#fff" }}
+              value={11}
+            >
+              Papelaria
+            </option>
+            <option
+              style={{ backgroundColor: "#252525", color: "#fff" }}
+              value={12}
+            >
+              Indústria e Comércio
+            </option>
           </NativeSelect>
         </div>
       </div>

@@ -234,7 +234,7 @@ export default function SimpleCard(props: any) {
                 </a>
               </div>
             </Col>
-            <Col md={4} lg={6}>
+            <Col md={8} lg={8}>
               <div
                 style={{
                   display: "flex",

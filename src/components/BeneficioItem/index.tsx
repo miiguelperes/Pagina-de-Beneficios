@@ -177,22 +177,22 @@ export default function SimpleCard(props: any) {
     switch (type) {
       case 1:
         item = (
-          <div style={{ backgroundColor: '#ffc3a6', height: 2, width: "110%", marginBottom: -20, marginTop: 10, marginLeft: -20 }}></div>
+          <div style={{ backgroundColor: '#ffc3a6', height: 2, width: "130%", marginBottom: -20, marginTop: 10, marginLeft: -20 }}></div>
         );
         break;
       case 2:
         item = (
-          <div style={{ backgroundColor: '#bddaa2', height: 2, width: "110%", marginBottom: -20, marginTop: 10, marginLeft: -20 }}></div>
+          <div style={{ backgroundColor: '#bddaa2', height: 2, width: "130%", marginBottom: -20, marginTop: 10, marginLeft: -20 }}></div>
         );
         break;
       case 3:
         item = (
-          <div style={{ backgroundColor: '#c7b1f1', height: 2, width: "110%", marginBottom: -20, marginTop: 10, marginLeft: -20 }}></div>
+          <div style={{ backgroundColor: '#c7b1f1', height: 2, width: "130%", marginBottom: -20, marginTop: 10, marginLeft: -20 }}></div>
         );
         break;
       case 4:
         item = (
-          <div style={{ backgroundColor: '#a2d7f1', height: 2, width: "110%", marginBottom: -20, marginTop: 10, marginLeft: -20 }}></div>
+          <div style={{ backgroundColor: '#a2d7f1', height: 2, width: "130%", marginBottom: -20, marginTop: 10, marginLeft: -20 }}></div>
         );
         break;
     }
@@ -224,7 +224,7 @@ export default function SimpleCard(props: any) {
                   }
                 >
                   <img
-                    style={{ objectFit: "cover", height: 85 }}
+                    style={{ objectFit: "cover", height: 85, marginBottom: 20 }}
                     src={
                       props.item.image ||
                       "https://via.placeholder.com/118x85?text=Imagem+Indispon%C3%ADvel"

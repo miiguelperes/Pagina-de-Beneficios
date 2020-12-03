@@ -70,4 +70,9 @@ hr { margin-top: 1rem; margin-bottom: 1rem; border: 0; border-top: 1px solid rgb
   .MuiContainer-root .MuiContainer-fixed { padding-left: 0px !important; padding-right: 0px !important; }
   .MuiBox-root { padding-left: 0px !important; padding-right: 0px !important; }
   .caixa-off { justify-content: center; display: flex; font-weight: "bold"; height: 50px; font-size: 32px; color: "#63666C"; }
+  .tab-categoria-beneficio { min-width: 50% !important; max-width: 100%; width: 25%; padding: 1px !important; }
+}
+
+@media only screen and (min-width : 420px) {
+  .tab-categoria-beneficio { min-width: 180px !important; }
 }

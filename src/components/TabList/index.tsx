@@ -138,9 +138,9 @@ export default function SimpleTabs(props: any) {
       },
     });
   };
-  const selctCategoryComponent = () => {
+  const selectCategoryComponent = () => {
     return (
-      <div style={{ height: 100 }}>
+      <div style={{ height: 70, marginRight: 20, float: "left" }}>
         <div style={{ color: "inherit" }}>
           Filtrar por <span style={{ fontWeight: "bolder" }}>Segmento</span>
         </div>
@@ -327,7 +327,7 @@ export default function SimpleTabs(props: any) {
           <Tab
             component={() => (
               <Button
-                style={{ minWidth: 180, maxWidth: "100%", width: "25%", padding: "1px" }}
+                className="tab-categoria-beneficio"
                 onClick={() => { setValue(3); props.props.clearData();props.props.saveSelected(99); setCategoryFilter(99); props.props.loadRequest({ filter01: { cashback: 99, category: 99 } })}}
               >
                 {value == 3 ? (
@@ -351,8 +351,8 @@ export default function SimpleTabs(props: any) {
           <Tab
             component={() => (
               <Button
-                style={{ minWidth: 180, maxWidth: "100%", width: "25%", padding: "1px" }}
-                onClick={() => { props.props.clearData(); setValue(1); props.props.saveSelected(99);  setCategoryFilter(99); props.props.loadRequest({ filter01: { cashback: 99, category: 99 } })}}
+                className="tab-categoria-beneficio"
+                onClick={() => { props.props.clearData(); setValue(1); props.props.saveSelected(99); setCategoryFilter(99); props.props.loadRequest({ filter01: { cashback: 99, category: 99 } })}}
               >
                 {value == 1 ? (
                   <img
@@ -375,8 +375,8 @@ export default function SimpleTabs(props: any) {
           <Tab
             component={() => (
               <Button
-                style={{ minWidth: 180, maxWidth: "100%", width: "25%", padding: "1px" }}
-                onClick={() => { props.props.clearData();setValue(2); props.props.saveSelected(99);  setCategoryFilter(99); props.props.loadRequest({ filter01: { cashback: 99, category: 99 } })}}
+                className="tab-categoria-beneficio"
+                onClick={() => { props.props.clearData();setValue(2); props.props.saveSelected(99); setCategoryFilter(99); props.props.loadRequest({ filter01: { cashback: 99, category: 99 } })}}
               >
                 {value == 2 ? (
                   <img
@@ -400,8 +400,8 @@ export default function SimpleTabs(props: any) {
             disableRipple
             component={() => (
               <Button
-                style={{ minWidth: 180, maxWidth: "100%", width: "25%", padding: "1px" }}
-                onClick={() => { props.props.clearData();setValue(0); props.props.saveSelected(99);  setCategoryFilter(99); props.props.loadRequest({ filter01: { cashback: 99, category: 99 } })}}
+                className="tab-categoria-beneficio"
+                onClick={() => { props.props.clearData();setValue(0); props.props.saveSelected(99); setCategoryFilter(99); props.props.loadRequest({ filter01: { cashback: 99, category: 99 } })}}
               >
                 {value == 0 ? (
                   <img
@@ -436,7 +436,9 @@ export default function SimpleTabs(props: any) {
       <TabPanel value={value} index={0}>
         <div style={{}}>
           {searchComponent("Cupons de Desconto")}
-          {selctCategoryComponent()}
+          <div style={{ display: "inline-block", flexDirection: "row" }}>
+            {selectCategoryComponent()}
+          </div>
           {props.props.type01.length == 0 && (
             <Alert
               style={{
@@ -451,7 +453,6 @@ export default function SimpleTabs(props: any) {
               Nenhum benefício encontrado
             </Alert>
           )}
-        
         </div>
         {props.props.type01.map((item: any) => {
             return (
@@ -466,7 +467,9 @@ export default function SimpleTabs(props: any) {
       <TabPanel value={value} index={1}>
         <div style={{}}>
           {searchComponent("Promoções Exclusivas")}
-          {selctCategoryComponent()}
+          <div style={{ display: "inline-block", flexDirection: "row" }}>
+            {selectCategoryComponent()}
+          </div>
           {props.props.type02.length == 0 && (
             <Alert
               style={{
@@ -481,7 +484,6 @@ export default function SimpleTabs(props: any) {
               Nenhum benefício encontrado
             </Alert>
           )}
-
         </div>
         {props.props.type02.map((item: any) => {
             return (
@@ -496,9 +498,9 @@ export default function SimpleTabs(props: any) {
       <TabPanel value={value} index={2}>
         <div style={{}}>
           {searchComponent("Queda de Preço")}
-          <div style={{ display: "flex", flexDirection: "row" }}>
-            {selctCategoryComponent()}
-            <div style={{ height: 100, marginLeft: 20 }}>
+          <div style={{ display: "inline-block", flexDirection: "row" }}>
+            {selectCategoryComponent()}
+            <div style={{ height: 100, float: "left" }}>
             <div style={{ color: "inherit" }}>
               Filtrar por <span style={{ fontWeight: "bolder" }}>Desconto</span>
             </div>
@@ -595,9 +597,9 @@ export default function SimpleTabs(props: any) {
       <TabPanel value={value} index={3}>
         <div style={{}}>
           {searchComponent("Cashbacks BEM")}
-          <div style={{ display: "flex", flexDirection: "row" }}>
-            {selctCategoryComponent()}
-            <div style={{ height: 100, marginLeft: 20 }}>
+          <div style={{ display: "inline-block", flexDirection: "row" }}>
+            {selectCategoryComponent()}
+            <div style={{ height: 100, float: "left" }}>
               <div style={{ color: "inherit" }}>
                 Filtrar por{" "}
                 <span style={{ fontWeight: "bolder" }}>Desconto</span>
@@ -694,7 +696,9 @@ export default function SimpleTabs(props: any) {
       <TabPanel value={value} index={4}>
         <div style={{}}>
           {searchComponent("Cashbacks BEM")}
-          {selctCategoryComponent()}
+          <div style={{ display: "inline-block", flexDirection: "row" }}>
+            {selectCategoryComponent()}
+          </div>
           {props.props.type00.map((item: any) => {
             return (
               <Grow in={checked}>

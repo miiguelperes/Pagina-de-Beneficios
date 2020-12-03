@@ -29,12 +29,12 @@ const useStyles = makeStyles({
     margin: "0 2px",
     transform: "scale(0.8)",
   },
-  accsumy:{
+  accsumy: {
     root: {
-      'MuiButtonBase-root':{
+      'MuiButtonBase-root': {
         display: 'none'
       },
-      'MuiAccordionSummary-root':{
+      'MuiAccordionSummary-root': {
         display: 'none'
       }
     }
@@ -98,14 +98,8 @@ export default function SimpleCard(props: any) {
       case 1:
         item = (
           <div style={{ height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
-            <div
-              style={{
-
-                textAlign: "center",
-                justifyContent: "center",
-                alignItems: "center",
-              }}
-            ><Img
+            <div style={{ textAlign: "center", justifyContent: "center", alignItems: "center" }}>
+              <Img
                 src={desconto_pin}
                 fallback={<CircularProgress />}
                 alt="Cupom de Desconto"
@@ -115,21 +109,15 @@ export default function SimpleCard(props: any) {
               <br />
               <span style={{ fontSize: 16, color: "#63666C" }}>
                 Cupom de Desconto
-            </span>
-            </div></div>
+              </span>
+            </div>
+          </div>
         );
         break;
       case 2:
         item = (
           <div style={{ height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
-            <div
-              style={{
-
-                textAlign: "center",
-                justifyContent: "center",
-                alignItems: "center",
-              }}
-            >
+            <div style={{ textAlign: "center", justifyContent: "center", alignItems: "center" }}>
               <img
                 src={promocao_pin}
                 alt="Promoção"
@@ -137,33 +125,17 @@ export default function SimpleCard(props: any) {
                 className="img-fluid"
               />
               <br />
-              <span
-                style={{ fontSize: 16, color: "#63666C", textAlign: "center" }}
-              >
+              <span style={{ fontSize: 16, color: "#63666C", textAlign: "center" }}>
                 Promoção
-            </span></div>
+              </span>
+            </div>
           </div>
         );
         break;
       case 3:
         item = (
-          <div
-            style={{
-              height: '100%', display: 'flex',
-              flexDirection: 'column',
-              textAlign: "center",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            <div
-              style={{
-
-                textAlign: "center",
-                justifyContent: "center",
-                alignItems: "center",
-              }}
-            >
+          <div style={{ height: '100%', display: 'flex', flexDirection: 'column', textAlign: "center", justifyContent: "center", alignItems: "center" }}>
+            <div style={{ textAlign: "center", justifyContent: "center", alignItems: "center" }}>
               <img
                 src={preco_pin}
                 alt="Queda de Preço"
@@ -171,32 +143,17 @@ export default function SimpleCard(props: any) {
                 className="img-fluid"
               />
               <br />
-              <span
-                style={{ fontSize: 16, color: "#63666C", textAlign: "center" }}
-              >
+              <span style={{ fontSize: 16, color: "#63666C", textAlign: "center" }}>
                 Queda de Preço
-            </span>
-            </div></div>
+              </span>
+            </div>
+          </div>
         );
         break;
       case 4:
         item = (
-          <div
-            style={{
-              height: '100%', display: 'flex', flexDirection: 'column',
-              textAlign: "center",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            <div
-              style={{
-
-                textAlign: "center",
-                justifyContent: "center",
-                alignItems: "center",
-              }}
-            >
+          <div style={{ height: '100%', display: 'flex', flexDirection: 'column', textAlign: "center", justifyContent: "center", alignItems: "center" }}>
+            <div style={{ textAlign: "center", justifyContent: "center", alignItems: "center" }}>
               <img
                 src={cashback_pin}
                 alt="Cashback BEM"
@@ -204,11 +161,9 @@ export default function SimpleCard(props: any) {
                 className="img-fluid"
               />
               <br />
-              <span
-                style={{ fontSize: 16, color: "#63666C", textAlign: "center" }}
-              >
+              <span style={{ fontSize: 16, color: "#63666C", textAlign: "center" }}>
                 Cashback BEM
-            </span>
+              </span>
             </div>
           </div>
         );
@@ -216,8 +171,36 @@ export default function SimpleCard(props: any) {
     }
     return item;
   };
+
+  const returnBorderBottom = (type: any) => {
+    let item = null;
+    switch (type) {
+      case 1:
+        item = (
+          <div style={{ backgroundColor: '#ffc3a6', height: 2, width: "130%", marginBottom: -20, marginTop: 10, marginLeft: -20 }}></div>
+        );
+        break;
+      case 2:
+        item = (
+          <div style={{ backgroundColor: '#bddaa2', height: 2, width: "130%", marginBottom: -20, marginTop: 10, marginLeft: -20 }}></div>
+        );
+        break;
+      case 3:
+        item = (
+          <div style={{ backgroundColor: '#c7b1f1', height: 2, width: "130%", marginBottom: -20, marginTop: 10, marginLeft: -20 }}></div>
+        );
+        break;
+      case 4:
+        item = (
+          <div style={{ backgroundColor: '#a2d7f1', height: 2, width: "130%", marginBottom: -20, marginTop: 10, marginLeft: -20 }}></div>
+        );
+        break;
+    }
+    return item;
+  };
+
   return (
-    <Card style={{ marginBottom: 20, padding: 20 }}>
+    <Card style={{ marginBottom: 20, padding: 20 }} className="card-benefit">
       <Row>
         <Col md={6} lg={6} xl={6}>
           <Row>
@@ -241,7 +224,7 @@ export default function SimpleCard(props: any) {
                   }
                 >
                   <img
-                    style={{ objectFit: "cover", height: 85 }}
+                    style={{ objectFit: "cover", height: 85, marginBottom: 20 }}
                     src={
                       props.item.image ||
                       "https://via.placeholder.com/118x85?text=Imagem+Indispon%C3%ADvel"
@@ -251,7 +234,7 @@ export default function SimpleCard(props: any) {
                 </a>
               </div>
             </Col>
-            <Col md={4} lg={6}>
+            <Col md={8} lg={8}>
               <div
                 style={{
                   display: "flex",
@@ -352,6 +335,8 @@ export default function SimpleCard(props: any) {
           </div>
         </AnimateHeight>
       </Row>
+
+      {returnBorderBottom(props.item.type_id)}
     </Card>
   );
 }

@@ -8,6 +8,7 @@ export enum RepositoriesTypes {
   LOGIN = '@repositories/LOGIN',
   SAVE_SELECTED = '@repositories/SAVE_SELECTED',
   SEARCH_DATA = '@repositories/SEARCH_DATA',
+  CLEAR_DATA = '@repositories/CLEAR_DATA',
   LOAD_FINISH = '@repositories/LOAD_FINISH'
 }
 
@@ -34,6 +35,11 @@ export interface RepositoriesState {
   readonly oldtype02: any[]
   readonly oldtype03: any[]
   readonly oldtype04: any[]
+  readonly initialType00: any[]
+  readonly initialType01: any[]
+  readonly initialType02: any[]
+  readonly initialType03: any[]
+  readonly initialType04: any[]
   readonly loading: boolean
   readonly error: boolean
   readonly selected: any
